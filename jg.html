@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>激光进度条</title>
+	</head>
+	<body>
+		<style>
+			.jg{border:2px solid red;border-radius:5px;box-shadow:2px 2px 2px #333;width:0;height:0;box-sizing:border-box;}
+		</style>
+		<div class="jg"></div>
+		<script>
+			function prodress(){
+				var pencent=Math.floor(Math.random()*100);
+				var _target=$('.jg');
+				_target.attr('style','width:'+pencent+'%');
+				$.ajax({
+					url:url,
+					method:get,
+					success:function(data){
+						// if success load
+						_target.attr('style','width:100%;');
+					},
+					error:function(data){
+						_target.attr('style','width:0;');
+					}
+				});
+			}
+			prodress();
+		</script>
+	</body>
+</html>
